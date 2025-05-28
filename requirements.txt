@@ -3,5 +3,6 @@ numpy
 Pillow
 tensorflow
 matplotlib
-scikit-learn
 seaborn
+scikit-learn
+tqdm
