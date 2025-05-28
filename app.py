@@ -112,12 +112,4 @@ elif menu == "모델 성능 시각화":
     y_pred = model.predict(X_test)
     y_pred_binary = (y_pred > 0.5).astype(int).flatten()
 
-    st.subheader("🧮 혼동 행렬")
-    cm = confusion_matrix(y_test, y_pred_binary)
-    plt.figure(figsize=(4, 4))
-    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
-    st.pyplot(plt)
 
-    st.subheader("📄 Classification Report")
-    report = classification_report(y_test, y_pred_binary)
-    st.text(report)
