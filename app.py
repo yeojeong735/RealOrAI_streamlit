@@ -8,6 +8,15 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, classification_report
 import seaborn as sns
 
+x_test_path = "X_test.npy"
+x_test_url = "https://drive.google.com/uc?id=1A2B3C4D5E6F7G8H9I"  # 공유 링크 ID 넣기
+
+if not os.path.exists(x_test_path):
+    with st.spinner("X_test.npy 다운로드 중..."):
+        gdown.download(x_test_url, x_test_path, quiet=False)
+        st.success("X_test.npy 다운로드 완료!")
+
+X_test = np.load("X_test.npy")
 
 model_path = "realorai_model.h5"
 model_url = "https://drive.google.com/file/d/1JvALt9eAc9CNt7uQTpfpOjJ5Hftu_GOt/view?usp=sharing"
