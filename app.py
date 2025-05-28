@@ -1,17 +1,38 @@
 import streamlit as st
+import os
+import gdown
 import numpy as np
 from PIL import Image
-import matplotlib.pyplot as plt
 from tensorflow.keras.models import load_model
+import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, classification_report
 import seaborn as sns
+
+x_test_path = "X_test.npy"
+x_test_url = "https://drive.google.com/uc?id=1A2B3C4D5E6F7G8H9I"  # 공유 링크 ID 넣기
+
+if not os.path.exists(x_test_path):
+    with st.spinner("X_test.npy 다운로드 중..."):
+        gdown.download(x_test_url, x_test_path, quiet=False)
+        st.success("X_test.npy 다운로드 완료!")
+
+X_test = np.load("X_test.npy")
+
+model_path = "realorai_model.h5"
+model_url = "https://drive.google.com/file/d/1JvALt9eAc9CNt7uQTpfpOjJ5Hftu_GOt/view?usp=sharing"
+
+if not os.path.exists(model_path):
+    with st.spinner("모델 파일을 다운로드 중입니다..."):
+        gdown.download(model_url, model_path, quiet=False)
+        st.success("모델 다운로드 완료!")
 
 # ✅ 모델 로드
 @st.cache_resource
 def load_my_model():
-    return load_model('realorai_model.h5')
+    return load_model(model_path)
 
 model = load_my_model()
+
 
 # ✅ 이미지 전처리
 def preprocess_uploaded_image(img, size=(128, 128)):

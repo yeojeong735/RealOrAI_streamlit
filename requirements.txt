@@ -1,2 +1,9 @@
-numpy
 streamlit
+numpy
+Pillow
+tensorflow
+matplotlib.pyplot
+seaborn
+scikit-learn
+gdown
+tqdm
