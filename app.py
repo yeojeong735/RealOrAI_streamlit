@@ -30,21 +30,6 @@ X_test = np.load(npy_path, allow_pickle=True)"
 zip_path = "X_test.zip"
 npy_path = "X_test.npy"
 
-# ✅ zip 파일 다운로드
-if not os.path.exists(npy_path):
-    if not os.path.exists(zip_path):
-        with st.spinner("압축 파일 다운로드 중..."):
-            gdown.download(zip_url, zip_path, quiet=False)
-            st.success("압축 파일 다운로드 완료!")
-
-    # ✅ 압축 해제
-    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-        zip_ref.extractall()
-        st.success("압축 해제 완료!")
-
-# ✅ npy 파일 로드
-X_test = np.load(npy_path, allow_pickle=True)
-
 model_path = "realorai_model.h5"
 model_url = "https://drive.google.com/file/d/1JvALt9eAc9CNt7uQTpfpOjJ5Hftu_GOt/view?usp=sharing"
 
