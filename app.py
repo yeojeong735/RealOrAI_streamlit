@@ -96,7 +96,6 @@ elif menu == "모델 성능 시각화":
     st.pyplot(plt)
 
     # ✅ 테스트셋 불러오기
-    X_test = np.load('X_test.npy')
     y_test = np.load('y_test.npy')
     y_pred = model.predict(X_test)
     y_pred_binary = (y_pred > 0.5).astype(int).flatten()
