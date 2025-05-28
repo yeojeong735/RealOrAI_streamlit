@@ -16,7 +16,7 @@ if not os.path.exists(x_test_path):
         gdown.download(x_test_url, x_test_path, quiet=False)
         st.success("X_test.npy 다운로드 완료!")
 
-X_test = np.load("X_test.npy")
+X_test = np.load("X_test.npy", allow_pickle=True)
 
 model_path = "realorai_model.h5"
 model_url = "https://drive.google.com/file/d/1JvALt9eAc9CNt7uQTpfpOjJ5Hftu_GOt/view?usp=sharing"
