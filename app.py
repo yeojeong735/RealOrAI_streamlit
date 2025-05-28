@@ -9,7 +9,7 @@ from sklearn.metrics import confusion_matrix, classification_report
 import seaborn as sns
 import zipfile
 
-zip_url = "https://drive.google.com/file/d/14fKqglPPHdsyXHxilJTVGuTm9mKG8PXA/view?usp=sharing"
+zip_url = "https://drive.google.com/uc?id=14fKqglPPHdsyXHxilJTVGuTm9mKG8PXA"
 zip_path = "X_test.zip"
 npy_path = "X_test.npy"
 
@@ -31,7 +31,7 @@ zip_path = "X_test.zip"
 npy_path = "X_test.npy"
 
 model_path = "realorai_model.h5"
-model_url = "https://drive.google.com/file/d/1JvALt9eAc9CNt7uQTpfpOjJ5Hftu_GOt/view?usp=sharing"
+model_url = "https://drive.google.com/uc?id=1JvALt9eAc9CNt7uQTpfpOjJ5Hftu_GOt"
 
 if not os.path.exists(model_path):
     with st.spinner("모델 파일을 다운로드 중입니다..."):
