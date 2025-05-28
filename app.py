@@ -26,7 +26,7 @@ if not os.path.exists(npy_path):
         st.success("압축 해제 완료!")
 
 # ✅ npy 파일 로드
-X_test = np.load(npy_path, allow_pickle=True)"
+X_test = np.load(npy_path, allow_pickle=True)
 zip_path = "X_test.zip"
 npy_path = "X_test.npy"
 
