@@ -2,7 +2,7 @@ streamlit
 numpy
 Pillow
 tensorflow
-matplotlib.pyplot
+matplotlib
 seaborn
 scikit-learn
 gdown
