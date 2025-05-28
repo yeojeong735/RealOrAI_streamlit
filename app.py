@@ -7,16 +7,43 @@ from tensorflow.keras.models import load_model
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, classification_report
 import seaborn as sns
+import zipfile
 
-x_test_path = "X_test.npy"
-x_test_url = "https://drive.google.com/file/d/1PVJbhOz0x2GT-dOdTumMswEfBSUOfJVc/view?usp=sharing"  
+zip_url = "https://drive.google.com/uc?id=1A2B3C4D5E6F7G8H9I"
+zip_path = "X_test.zip"
+npy_path = "X_test.npy"
 
-if not os.path.exists(x_test_path):
-    with st.spinner("X_test.npy 다운로드 중..."):
-        gdown.download(x_test_url, x_test_path, quiet=False)
-        st.success("X_test.npy 다운로드 완료!")
+# ✅ zip 파일 다운로드
+if not os.path.exists(npy_path):
+    if not os.path.exists(zip_path):
+        with st.spinner("압축 파일 다운로드 중..."):
+            gdown.download(zip_url, zip_path, quiet=False)
+            st.success("압축 파일 다운로드 완료!")
 
-X_test = np.load("X_test.npy", allow_pickle=True)
+    # ✅ 압축 해제
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall()
+        st.success("압축 해제 완료!")
+
+# ✅ npy 파일 로드
+X_test = np.load(npy_path, allow_pickle=True)"
+zip_path = "X_test.zip"
+npy_path = "X_test.npy"
+
+# ✅ zip 파일 다운로드
+if not os.path.exists(npy_path):
+    if not os.path.exists(zip_path):
+        with st.spinner("압축 파일 다운로드 중..."):
+            gdown.download(zip_url, zip_path, quiet=False)
+            st.success("압축 파일 다운로드 완료!")
+
+    # ✅ 압축 해제
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall()
+        st.success("압축 해제 완료!")
+
+# ✅ npy 파일 로드
+X_test = np.load(npy_path, allow_pickle=True)
 
 model_path = "realorai_model.h5"
 model_url = "https://drive.google.com/file/d/1JvALt9eAc9CNt7uQTpfpOjJ5Hftu_GOt/view?usp=sharing"
