@@ -9,7 +9,7 @@ from sklearn.metrics import confusion_matrix, classification_report
 import seaborn as sns
 import zipfile
 
-zip_url = "https://drive.google.com/uc?id=1A2B3C4D5E6F7G8H9I"
+zip_url = "https://drive.google.com/file/d/14fKqglPPHdsyXHxilJTVGuTm9mKG8PXA/view?usp=sharing"
 zip_path = "X_test.zip"
 npy_path = "X_test.npy"
 
