@@ -5,5 +5,5 @@ tensorflow
 matplotlib
 seaborn
 scikit-learn
-tqdm
 gdown
+tqdm
