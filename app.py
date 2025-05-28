@@ -9,7 +9,7 @@ from sklearn.metrics import confusion_matrix, classification_report
 import seaborn as sns
 
 x_test_path = "X_test.npy"
-x_test_url = "https://drive.google.com/uc?id=1A2B3C4D5E6F7G8H9I"  # 공유 링크 ID 넣기
+x_test_url = "https://drive.google.com/file/d/1PVJbhOz0x2GT-dOdTumMswEfBSUOfJVc/view?usp=sharing"  
 
 if not os.path.exists(x_test_path):
     with st.spinner("X_test.npy 다운로드 중..."):
